@@ -1,3 +1,3 @@
 FROM arm64v8/docker:dind
 
-RUN apk add openjdk8
+RUN apk add openjdk8 git

@@ -10,9 +10,6 @@ pipeline {
         stage('Prep') {
           steps {
 
-           sh "/usr/local/bin/dockerd-entrypoint.sh &"
-           sh "sleep 30"
-
             withCredentials([usernamePassword(credentialsId: 'docker-login', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
               sh "echo $PASS | docker login --username $USER --password-stdin"
 
@@ -27,7 +24,7 @@ pipeline {
         }
         stage('Push the image.') {
           steps {
-            sh "docker push williamgillaspy/arm64v8dockerjdk8:dind";
+            sh "docker push williamgillaspy/arm64v8dockerjdk8:dind"
           }
         }
     }

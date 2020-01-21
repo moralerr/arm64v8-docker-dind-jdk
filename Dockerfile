@@ -4,6 +4,8 @@ RUN apk add --update openjdk8 git openssh openssh-client bash curl
 
 COPY init.sh /tmp/init.sh
 
+RUN chmod 0777 /tmp/init.sh
+
 RUN mkdir /etc/docker
 
 COPY daemon.json /etc/docker/daemon.json

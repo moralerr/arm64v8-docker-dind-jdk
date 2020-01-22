@@ -1,4 +1,4 @@
-FROM arm64v8/docker:dind
+FROM arm64v8/docker:19.03.4
 
 RUN apk add --update openjdk8 git openssh openssh-client bash curl
 

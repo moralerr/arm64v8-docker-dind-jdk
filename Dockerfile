@@ -14,3 +14,6 @@ RUN curl -sSL https://git.io/get-mo -o mo && \
     chmod +x mo && \
     mv mo /usr/local/bin/
 
+ENV DOCKER_HOST=tcp://localhost:2376
+ENV DOCKER_TLS_VERIFY=1
+

@@ -10,15 +10,13 @@ pipeline {
         stage('Prep') {
           steps {
 
-            withCredentials([usernamePassword(credentialsId: 'docker-login', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+            withCredentials([usernamePassword(credentialsId: 'docker-io-login', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
               sh "echo $PASS | docker login --username $USER --password-stdin"
-
             }
           }
         }
         stage('Build image') {
           steps {
-            sh "docker login"
             sh "docker build . -t williamgillaspy/arm64v8dockerjdk8:dind"
           }
         }

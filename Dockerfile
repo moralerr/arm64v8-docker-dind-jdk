@@ -14,6 +14,7 @@ RUN curl -sSL https://git.io/get-mo -o mo && \
     chmod +x mo && \
     mv mo /usr/local/bin/
 
+# For some reason this is being set to "docker" when the container runs.  Override.
 ENV DOCKER_HOST=tcp://localhost:2376
 ENV DOCKER_TLS_VERIFY=1
 

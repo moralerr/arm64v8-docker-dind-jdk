@@ -1,6 +1,6 @@
 pipeline {
 
-    agent {label "jenkins-bc-did"}
+    agent {label "jenkins-did"}
 
     triggers {
        cron('H 5 * * *')
